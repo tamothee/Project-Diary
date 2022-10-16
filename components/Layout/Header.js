@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Button from "./Button";
 import { useTheme } from "next-themes";
+import Image from "next/image";
 
 export default function Header() {
   const { systemTheme, theme, setTheme } = useTheme();
@@ -14,6 +15,12 @@ export default function Header() {
     const currentTheme = theme === "system" ? systemTheme : theme;
 
     if(!mounted) return null;
+
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark')
+    } else {
+      document.documentElement.classList.remove('dark')
+    }
 
     if (currentTheme === "light") {
       return (
@@ -64,14 +71,14 @@ export default function Header() {
       <div className="pt-3 text-xl font-bold flex justify-center items-center">
         <div className="mr-auto invisible">div</div>
         <div className="inline-flex items-center">
-          <img src={"/bongo_cat_mini.png"} width={100} height={100} />
+          <Image alt="" src={"/bongo_cat_mini.png"} width={100} height={60} unoptimized/>
           Project Diary
         </div>
         <div className="ml-auto">
           <ToggleButton />
         </div>
       </div>
-      <hr className="" />
+      <hr className="border-black dark:border-white" />
     </header>
   );
 }

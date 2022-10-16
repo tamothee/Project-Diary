@@ -40,7 +40,7 @@ export default function Layout({ children }) {
               shadow-mapSize-width={1024}
               shadow-bias={-0.0001}
             />
-            <ambientLight intensity={0.2} />
+            <ambientLight intensity={0.4} />
             <BongoCat position={[0, 0.7, 0]} />
             <Plane />
           </Canvas>
