@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
     <>
-      <hr className="border-black dark:border-white" />
+      <hr className="border-black dark:border-white mt-3" />
       <div className="pt-2 pb-4 flex justify-center">
         <div>
           Contact me at{" "}

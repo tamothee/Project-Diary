@@ -5,12 +5,12 @@ export default function Home() {
   return (
     <>
       <div className="flex justify-center pt-2">
-        <div className="flex flex-col md:flex-row rounded-lg bg-[#F8C2B1] dark:bg-cyan-600 max-w-xl shadow-lg">
+        <div className="flex flex-col md:flex-row rounded-lg bg-[#F8C2B1] dark:bg-gray-800 max-w-xl shadow-lg">
           <div className="p-6 flex flex-col justify-start">
-            <h5 className="text-gray-900 text-xl font-medium mb-2">
+            <h5 className="text-xl font-medium mb-2">
               Timothy Leong
             </h5>
-            <p className="text-gray-700 text-base mb-4">
+            <p className="text-base mb-4">
               Studying Computer Engineering in Singapore Polytechnic
             </p>
             <Link href="https://github.com/tamothee" passHref={true}>
