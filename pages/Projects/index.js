@@ -17,14 +17,14 @@ export default function AllProjects({ projects, config }) {
                       className="rounded-t-lg"
                       src={project.frontMatter.thumbnailUrl}
                       alt=""
-                      height={150}
+                      height={200}
                       width={400}
                     />
                     <div className="p-6">
                       <h5 className=" text-xl font-medium">
                         {project.frontMatter.title}
                       </h5>
-                      <p className="text-sm pt-2 pb-2">
+                      <p className="text-sm pt-2 pb-2 italic">
                         Tags: {project.frontMatter.tags.map((tags) => tags + " ")}
                       </p>
                       <p className="text-base mb-4">
