@@ -24,7 +24,7 @@ export default function AllProjects({ projects, config }) {
                       <h5 className=" text-xl font-medium">
                         {project.frontMatter.title}
                       </h5>
-                      <p className="text-sm pt-2 pb-2 italic">
+                      <p className="text-sm text-gray-400 pt-2 pb-2 italic">
                         Tags: {project.frontMatter.tags.map((tags) => tags + " ")}
                       </p>
                       <p className="text-base mb-4">
