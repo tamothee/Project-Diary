@@ -31,7 +31,7 @@ export default function Layout({ children }) {
         <Suspense fallback={<Loading />}>
           <Canvas style={{ height: "30vh" }} shadows>
             <PerspectiveCamera makeDefault position={[4, 3, 5]} />
-            <OrbitControls />
+            <OrbitControls maxPolarAngle={Math.PI/2}/>
             <directionalLight
               intensity={1}
               castShadow
