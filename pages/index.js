@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <>
       <div className="flex justify-center pt-2">
-        <div className="flex flex-col md:flex-row rounded-lg bg-[#F8C2B1] dark:bg-gray-800 max-w-xl shadow-lg">
+        <div className="flex md:flex-row rounded-lg bg-[#F8C2B1] dark:bg-gray-800 max-w-xl shadow-lg">
           <div className="p-6 flex flex-col justify-start">
             <h5 className="text-xl font-medium mb-2">
               Timothy Leong
