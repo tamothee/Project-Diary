@@ -5,6 +5,7 @@ import { serialize } from "next-mdx-remote/serialize";
 import { useRouter } from "next/router";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import Button from "../../components/Layout/Button";
+import Link from "next/link";
 
 const components = { Button, SyntaxHighlighter };
 
@@ -36,7 +37,11 @@ export default function ProjectPage({ frontMatter, mdxSource }) {
           <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
           {frontMatter.title}
         </h5>
-        <div className="font-normal text-gray-700 dark:text-gray-400">
+        <div className="text-gray-400">
+          <i>Tags: {frontMatter.tags.map(tags=>tags+" ")}</i>
+        </div>
+        <br/>
+        <div className="font-normal text-gray-700 dark:text-gray-200">
           <MDXRemote {...mdxSource} components={components} />          
         </div>
         </div>
