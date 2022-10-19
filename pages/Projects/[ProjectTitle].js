@@ -14,7 +14,7 @@ export default function ProjectPage({ frontMatter, mdxSource }) {
 
   return (
     <div className="flex justify-center pt-4">
-      <div className="block max-w-[80%]  bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+      <div className="block max-w-[95%]  bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
         <button onClick={()=>router.back()} className="pt-3 pl-2 hover:underline flex gap-2 text-sm">
           <svg
             xmlns="http://www.w3.org/2000/svg"
