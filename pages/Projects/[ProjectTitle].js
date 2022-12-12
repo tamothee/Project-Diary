@@ -5,18 +5,19 @@ import { serialize } from "next-mdx-remote/serialize";
 import { useRouter } from "next/router";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import Button from "../../components/Layout/Button";
-import Link from "next/link";
 
 const components = { Button, SyntaxHighlighter };
 
 export default function ProjectPage({ frontMatter, mdxSource }) {
-
   const router = useRouter();
 
   return (
     <div className="flex justify-center pt-4">
       <div className="block max-w-[95%]  bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
-        <button onClick={()=>router.back()} className="pt-3 pl-2 hover:underline flex gap-2 text-sm">
+        <button
+          onClick={() => router.back()}
+          className="pt-3 pl-2 hover:underline flex gap-2 text-sm"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -35,17 +36,16 @@ export default function ProjectPage({ frontMatter, mdxSource }) {
         </button>
         <div className="p-6">
           <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-          {frontMatter.title}
-        </h5>
-        <div className="text-gray-400 italic">
-          Tags: {frontMatter.tags.map(tags=>tags+" ")}
+            {frontMatter.title}
+          </h5>
+          <div className="text-gray-400 italic">
+            Tags: {frontMatter.tags.map((tags) => tags + " ")}
+          </div>
+          <br />
+          <div className="font-normal text-gray-700 dark:text-gray-200">
+            <MDXRemote {...mdxSource} components={components} />
+          </div>
         </div>
-        <br/>
-        <div className="font-normal text-gray-700 dark:text-gray-200">
-          <MDXRemote {...mdxSource} components={components} />          
-        </div>
-        </div>
-        
       </div>
     </div>
   );

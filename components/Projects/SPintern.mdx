@@ -1,0 +1,87 @@
+---
+title: Singapore Polytechnic Internship
+date: "March 14, 2022"
+description: A website dashboard for monitoring a fleet of autonomous vehicles
+thumbnailUrl: "/SPintern/SPinternThumbnail.JPG"
+tags:
+  [
+    "Javascript",
+    "ExpressJS",
+    "ReactJS",
+    "MUI",
+    "Google-Maps-Platform",
+    "ffmpeg",
+    "IP-live-stream",
+    "node-red",
+  ]
+---
+
+<div>
+  <div >
+    <img
+      src="/SPintern/SPinternThumbnail.JPG"
+      alt="SPinternThumbnail"
+      width="700"
+      height="800"
+    />
+  </div>
+  <div className='pt-4'>
+    <img
+        src="/SPintern/SPinternMapView.JPG"
+        alt="SPinternMapView"
+        width="700"
+        height="800"
+      />
+  </div>
+</div>
+
+<div className='pt-4'>
+  <div className='text-xl tracking-tight text-gray-900 dark:text-white'>Description</div>
+    <div>
+      This project was done during my internship in Singapore Polytechnic. I was tasked to
+      do a condition monitoring and vehicle tracking dashboard for a fleet of autonomous vehicle in
+      Singapore Polytechnic.
+    </div>
+
+    <br/>
+
+    <div className='text-xl tracking-tight text-gray-900 dark:text-white'>Background</div>
+    <div>
+      Previously, there was a node red dashboard that tracks the vehicle sensors like speed,
+      humidity, and temperature. However, this dashboard was only visible locally on that
+      particular vehicle. This was a problem as there were plans to increase the fleet 
+      size. With the increase in fleet size, there was a need for remote monitoring of multiple 
+      vehicles at once.
+    </div>
+
+    <br/>
+
+    <div className='text-xl tracking-tight text-gray-900 dark:text-white'>Details</div>
+    <div>
+      A few key features stuck out during discussion with the supervisors. The features were, 
+      live camera feed, live sensor reading, location tracking, sensor logging (saving to database) 
+      and graphs for the logged sensor data. 
+
+      <br/>
+      
+      I used MQTT to send data over to a Javascript server where I pre-process the data 
+      like checking for duplicate data before sending it over to the database. The database 
+      chosen was MySQL server because I was already familiar with it. I used an IP camera 
+      because there was 1 lying around in the lab and there was a router with a sim card on 
+      the vehicle where I can connect the IP camera. I chose ReactJS and MUI as it was the most 
+      popular frameworks which was important to the supervisors. I used ffmpeg to convert 
+      the IP camera RTSP to hls. Then, I used a Javascript server to play the hls video over to 
+      the dashboard. I used react-chartjs-2 for the graph visualisations of the logged sensor data. 
+      For the live sensor data, I just polled the server every 5 seconds to keep server client parity 
+      rather than directly connecting the dashboard to the MQTT server. Node-red was used to manage 
+      the sensors as well as the MQTT protocol. The MySQL database and node-red server was pushed 
+      to a Huawei Cloud that was done up by my supervisor.
+
+      <br/>
+
+      No github repository will be given as I was not given permission to open the code to the 
+      public.
+
+    </div>
+
+</div>
