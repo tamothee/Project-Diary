@@ -16,24 +16,9 @@ tags:
   ]
 ---
 
-<div>
-  <div >
-    <img
-      src="/SPintern/SPinternThumbnail.JPG"
-      alt="SPinternThumbnail"
-      width="700"
-      height="800"
-    />
-  </div>
-  <div className='pt-4'>
-    <img
-        src="/SPintern/SPinternMapView.JPG"
-        alt="SPinternMapView"
-        width="700"
-        height="800"
-      />
-  </div>
-</div>
+<video controls>
+  <source src="/SPintern/IEP_ASEV.mp4" type="video/mp4" />
+</video>
 
 <div className='pt-4'>
   <div className='text-xl tracking-tight text-gray-900 dark:text-white'>Description</div>
@@ -56,32 +41,50 @@ tags:
 
     <br/>
 
-    <div className='text-xl tracking-tight text-gray-900 dark:text-white'>Details</div>
     <div>
-      A few key features stuck out during discussion with the supervisors. The features were, 
+      Key features that was requested were, 
       live camera feed, live sensor reading, location tracking, sensor logging (saving to database) 
       and graphs for the logged sensor data. 
-
-      <br/>
-      
-      I used MQTT to send data over to a Javascript server where I pre-process the data 
-      like checking for duplicate data before sending it over to the database. The database 
-      chosen was MySQL server because I was already familiar with it. I used an IP camera 
-      because there was 1 lying around in the lab and there was a router with a sim card on 
-      the vehicle where I can connect the IP camera. I chose ReactJS and MUI as it was the most 
-      popular frameworks which was important to the supervisors. I used ffmpeg to convert 
-      the IP camera RTSP to hls. Then, I used a Javascript server to play the hls video over to 
-      the dashboard. I used react-chartjs-2 for the graph visualisations of the logged sensor data. 
-      For the live sensor data, I just polled the server every 5 seconds to keep server client parity 
-      rather than directly connecting the dashboard to the MQTT server. Node-red was used to manage 
-      the sensors as well as the MQTT protocol. The MySQL database and node-red server was pushed 
-      to a Huawei Cloud that was done up by my supervisor.
-
-      <br/>
-
-      No github repository will be given as I was not given permission to open the code to the 
-      public.
-
     </div>
 
+    <br/>
+   <div className='text-xl tracking-tight text-gray-900 dark:text-white'>System Architecture</div>
+   <div>
+    <img src="/SPintern/SystemArchitechture.png" alt="system architecture"/>
+   </div>
+
+  <div className='text-xl tracking-tight text-gray-900 dark:text-white'>Details</div>
+   <div>
+    
+      I utilized MQTT to transmit sensor data to a Javascript server. At the server, the data underwent preprocessing 
+      such as duplicate data check, before being sent to a MySQL database to be stored. I opted for MySQL as I was 
+      already well-versed in its usage. At the end of my internship, my database was pushed to Huawei cloud.
+
+      <br/>
+
+      For the live camera view, an IP camera was installed on the vehicle. The IP camera was connected to a router 
+      equipped with a sim card onboard the vehicle. Then a javascript server was used to access the IP camera, 
+      convert it to HLS using ffmpeg, and then played on the website.
+
+      <br/>
+
+      To create the user interface for the website, I chose ReactJS and MUI framework. They are the most popular 
+      frameworks which was a quality highly valued by my supervisors. 
+      
+      <br/>
+
+      As for the data visualisations of the sensor data, I utilized react-chartjs-2 to 
+      generate graphical representations of the logged sensor data.
+
+      <br/>
+
+      For real-time sensor data, I set up a polling mechanism where the server was queried every 5 seconds instead 
+      of directly connecting the dashboard to the MQTT server to maintain server-client parity. Node-red was used 
+      to manage both the sensors and the MQTT protocol on the vehicle. It was not mentioned in the video but users 
+      could set colours to their threshold for a better visualisation. For example, users could set a green colour 
+      to data that is within the threshold while having red for data that is out of the threshold.
+   </div>
+
+  <br/>
+  No github repository will be given as I was not given permission to open the code to the public.
 </div>
