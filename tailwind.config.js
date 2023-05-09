@@ -28,7 +28,8 @@ module.exports = {
       '9/10': '90%',
      }
     },
-    minHeight: {
+    extend:{
+      minHeight: {
       "10v": "10vh",
       "20v": "20vh",
       "30v": "30vh",
@@ -40,6 +41,7 @@ module.exports = {
       "90v": "90vh",
       "100v": "100vh",
     },
+    }
   },
   plugins: [
     require('@tailwindcss/typography'),
