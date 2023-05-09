@@ -1,7 +1,16 @@
 export default function Loading() {
   return (
-    <div className="flex h-30v justify-center items-center" >
-      <div>loading...</div>
+    <div style={{ height: "30vh", position: "relative" }}>
+      <div
+        style={{
+          position: "absolute",
+          top: "50%",
+          left: "50%",
+          transform: "translate(-50%, -50%)",
+        }}
+      >
+        loading...
+      </div>
     </div>
   );
 }
