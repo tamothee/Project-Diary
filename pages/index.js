@@ -4,13 +4,13 @@ import Link from "next/link";
 export default function Home() {
   return (
     <>
-      <div className="flex justify-center pt-2 font-sans">
+      <div className="flex justify-center pt-2">
         <div className="flex md:flex-row rounded-lg bg-[#F8C2B1] dark:bg-gray-800 max-w-xl shadow-lg">
           <div className="p-6 flex flex-col justify-start">
             <h5 className="text-xl font-medium mb-2">
               Timothy Leong
             </h5>
-            <p className="text-base mb-4">
+            <p className="text-base mb-4 font-sans">
             Aspiring software developer based in Singapore who enjoys getting hands-on experience 
             in software development and IoT projects. Graduated from Singapore Polytechnic in Computer 
             Engineering and will be enrolling into SMU&#39;s Software Engineering program in 2025. 
