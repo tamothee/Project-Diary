@@ -11,7 +11,12 @@ export default function Home() {
               Timothy Leong
             </h5>
             <p className="text-base mb-4">
-              Singapore Polytechnic Computer Engineering Graduate
+            Aspiring software developer based in Singapore who enjoys getting hands-on experience 
+            in software development and IoT projects. Graduated from Singapore Polytechnic in Computer 
+            Engineering and will be enrolling into SMU's Software Engineering program in 2025. 
+            </p>
+            <p className="text-base mb-4">
+              Check out my GitHub and LinkedIn by clicking the logo below!
             </p>
             <div className="display: inline">
               <Link href="https://github.com/tamothee" passHref={true}>
