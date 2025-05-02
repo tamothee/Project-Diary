@@ -13,7 +13,8 @@ export default function Home() {
             <p className="text-base mb-4">
               Singapore Polytechnic Computer Engineering Graduate
             </p>
-            <Link href="https://github.com/tamothee" passHref={true}>
+            <div className="display: inline">
+              <Link href="https://github.com/tamothee" passHref={true}>
               <a className="b">
                 <Image src={"/GithubLogo.png"} alt="" width={40} height={40} />
               </a>
@@ -23,6 +24,7 @@ export default function Home() {
                 <Image src={"/LinkedinLogo.svg"} alt="" width={40} height={40} />
               </a>
             </Link>
+            </div>
           </div>
         </div>
       </div>
