@@ -11,11 +11,16 @@ export default function Home() {
               Timothy Leong
             </h5>
             <p className="text-base mb-4">
-              Studying Computer Engineering in Singapore Polytechnic
+              Singapore Polytechnic Computer Engineering Graduate
             </p>
             <Link href="https://github.com/tamothee" passHref={true}>
               <a className="b">
                 <Image src={"/GithubLogo.png"} alt="" width={40} height={40} />
+              </a>
+            </Link>
+            <Link href="https://sg.linkedin.com/in/timothy-leong-ming-liang-85ba83255" passHref={true}>
+              <a className="b">
+                <Image src={"/LinkedinLogo.svg"} alt="" width={40} height={40} />
               </a>
             </Link>
           </div>
@@ -27,10 +32,9 @@ export default function Home() {
         <div className="flex justify-center ">
           <div className="block p-6 rounded-lg shadow-lg dark:bg-gray-600 max-w-md">
             <p className="text-gray-700 dark:text-white text-lg mb-4">
-              Project Diary is a website where I log all interesting projects
-              that I have done for future reference as well as to showcase them.
-              Hence, the name Project Diary, as in a project that is a diary
-              that holds projects hahaha no? sorry...
+              Project Diary is a website where I log some of my favourite 
+              and notable projects that I have done for future reference as 
+              well as to showcase them.
             </p>
           </div>
         </div>
