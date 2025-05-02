@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function AllProjects({ projects, config }) {
   return (
-    <div className="flex flex-wrap justify-center flex-wrap gap-3 pt-3 font-sans">
+    <div className="flex flex-wrap justify-center flex-wrap gap-3 pt-3">
       {projects.map((project, index) => {
         return (
           <div key={index} className="w-5/12 min-w-[300px] hover:scale-105 pt-2">

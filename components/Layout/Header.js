@@ -14,12 +14,16 @@ export default function Header() {
   function ToggleButton() {
     const currentTheme = theme === "system" ? systemTheme : theme;
 
-    if(!mounted) return null;
+    if (!mounted) return null;
 
-    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      document.documentElement.classList.add('dark')
+    if (
+      localStorage.theme === "dark" ||
+      (!("theme" in localStorage) &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches)
+    ) {
+      document.documentElement.classList.add("dark");
     } else {
-      document.documentElement.classList.remove('dark')
+      document.documentElement.classList.remove("dark");
     }
 
     if (currentTheme === "light") {
@@ -69,11 +73,16 @@ export default function Header() {
   return (
     <header>
       <div className="pt-3 text-xl font-bold flex justify-center items-center">
-        <div className="mr-auto invisible">div</div>
-        <div className="inline-flex items-center">
-          <Image alt="" src={"/bongo_cat_mini.png"} width={100} height={60} unoptimized/>
-          Project Diary
-        </div>
+        <div className="mr-auto invisible"></div>
+          <Image
+            alt=""
+            src={"/bongo_cat_mini.png"}
+            width={100}
+            height={60}
+            unoptimized
+          />
+
+        <div className="inline-flex items-center">Project Diary</div>
         <div className="ml-auto">
           <ToggleButton />
         </div>
