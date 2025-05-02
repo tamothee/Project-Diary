@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function Home() {
   return (
     <>
-      <div className="flex justify-center pt-2">
+      <div className="flex justify-center pt-2 font-sans">
         <div className="flex md:flex-row rounded-lg bg-[#F8C2B1] dark:bg-gray-800 max-w-xl shadow-lg">
           <div className="p-6 flex flex-col justify-start">
             <h5 className="text-xl font-medium mb-2">
@@ -34,7 +34,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="pt-4 text-lg max-w-lg mx-auto px-4">
+      <div className="pt-4 text-lg max-w-lg mx-auto px-4 font-sans">
         <div className="flex justify-center ">
           <div className="block p-6 rounded-lg shadow-lg dark:bg-gray-600 max-w-md">
             <p className="text-gray-700 dark:text-white text-lg mb-4">
