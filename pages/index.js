@@ -15,7 +15,7 @@ export default function Home() {
             </p>
             <div className="display: inline">
               <Link href="https://github.com/tamothee" passHref={true}>
-              <a className="b">
+              <a className="b pr-4">
                 <Image src={"/GithubLogo.png"} alt="" width={40} height={40} />
               </a>
             </Link>
