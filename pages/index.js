@@ -24,7 +24,6 @@ export default function Home() {
               </a>
             </Link>
           </div>
-          {/* <Image src={"/bongo_cat_mini.png"} alt="" width={100} height={100} /> */}
         </div>
       </div>
 
