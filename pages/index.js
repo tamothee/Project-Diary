@@ -8,12 +8,14 @@ export default function Home() {
         <div className="flex md:flex-row rounded-lg bg-[#F8C2B1] dark:bg-gray-800 max-w-xl shadow-lg">
           <div className="p-6 flex flex-col justify-start">
             <h5 className="text-xl font-medium mb-2">
-              Timothy Leong
+              About Me!
             </h5>
-            <p className="text-base mb-4 font-sans">
-            Aspiring software developer based in Singapore who enjoys getting hands-on experience 
-            in software development and IoT projects. Graduated from Singapore Polytechnic in Computer 
-            Engineering and will be enrolling into SMU&#39;s Software Engineering program in 2025. 
+            <p className="text-base mb-4">
+              Hello, I am Timothy! Welcome to Project Diary where I log some of my favourite and notable projects
+               that I have done.
+               I am an aspiring software developer based in Singapore who enjoys getting hands-on experience 
+               in software development and IoT projects. Graduated from Singapore Polytechnic in Computer 
+               Engineering and will be enrolling into SMU&#39;s Software Engineering program in 2025. 
             </p>
             <p className="text-base mb-4">
               Check out my GitHub and LinkedIn by clicking the logo below!
@@ -43,18 +45,6 @@ export default function Home() {
                 </a>
               </Link>
             </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="pt-4 text-lg max-w-lg mx-auto px-4 font-sans">
-        <div className="flex justify-center ">
-          <div className="block p-6 rounded-lg shadow-lg dark:bg-gray-600 max-w-md">
-            <p className="text-gray-700 dark:text-white text-lg mb-4">
-              Project Diary is a website where I log some of my favourite 
-              and notable projects that I have done for future reference as 
-              well as to showcase them.
-            </p>
           </div>
         </div>
       </div>
