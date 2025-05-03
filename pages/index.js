@@ -8,14 +8,12 @@ export default function Home() {
         <div className="flex md:flex-row rounded-lg bg-[#F8C2B1] dark:bg-gray-800 max-w-xl shadow-lg">
           <div className="p-6 flex flex-col justify-start">
             <h5 className="text-xl font-medium mb-2">
-              About me
+              Timothy Leong
             </h5>
             <p className="text-base mb-4 font-sans">
-              Hello, I am Timothy! Welcome to Project Diary where I log some of my favourite and notable projects
-              that I have done.
-              I am an aspiring software developer based in Singapore who enjoys getting hands-on experience 
-              in software development and IoT projects. Graduated from Singapore Polytechnic in Computer 
-              Engineering and will be enrolling into SMU&#39;s Software Engineering program in 2025. 
+            Aspiring software developer based in Singapore who enjoys getting hands-on experience 
+            in software development and IoT projects. Graduated from Singapore Polytechnic in Computer 
+            Engineering and will be enrolling into SMU&#39;s Software Engineering program in 2025. 
             </p>
             <p className="text-base mb-4">
               Check out my GitHub and LinkedIn by clicking the logo below!
