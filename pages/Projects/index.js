@@ -1,43 +1,30 @@
 import fs from "fs";
 import matter from "gray-matter";
-import Link from "next/link";
-import Image from "next/image";
+import ProjectCard from "../../components/Portfolio/ProjectCard";
 
-export default function AllProjects({ projects, config }) {
+export default function AllProjects({ projects }) {
   return (
-    <div className="flex flex-wrap justify-center flex-wrap gap-3 pt-3">
-      {projects.map((project, index) => {
-        return (
-          <div key={index} className="w-5/12 min-w-[300px] hover:scale-105 pt-2">
-            <Link href={"/Projects/" + project.slug} passHref>
-              <a>
-                <div className="flex justify-center">
-                  <div className="rounded-lg shadow-lg bg-white dark:bg-gray-800">
-                    <Image
-                      className="rounded-t-lg"
-                      src={project.frontMatter.thumbnailUrl}
-                      alt=""
-                      height={200}
-                      width={400}
-                    />
-                    <div className="p-6">
-                      <h5 className=" text-xl font-medium">
-                        {project.frontMatter.title}
-                      </h5>
-                      <p className="text-sm text-gray-400 pt-2 pb-2 italic">
-                        Tags: {project.frontMatter.tags.map((tags) => tags + " ")}
-                      </p>
-                      <p className="text-base mb-4">
-                        {project.frontMatter.description}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </Link>
-          </div>
-        );
-      })}
+    <div className="mx-auto rounded-lg max-w-7xl px-4 py-10 sm:px-6 lg:px-8 bg-white dark:bg-slate-900">
+      <div className="mb-10 text-center">
+        <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-gray-100 sm:text-5xl">
+          Projects
+        </h1>
+        <p className="mx-auto mt-4 max-w-2xl text-base text-gray-600 dark:text-gray-300">
+          A collection of web, IoT, and software projects I’ve built.
+        </p>
+      </div>
+
+      <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
+        {projects.map((project) => (
+          <ProjectCard
+            key={project.slug}
+            title={project.frontMatter.title}
+            description={project.frontMatter.description}
+            tags={project.frontMatter.tags}
+            href={`/Projects/${project.slug}`}
+          />
+        ))}
+      </div>
     </div>
   );
 }

@@ -1,7 +1,6 @@
 import Header from "./Header";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
-import Navbar from "./Navbar";
 import Head from "next/head";
 import Footer from "./Footer";
 import { Suspense } from "react";
@@ -20,13 +19,13 @@ export default function Layout({ children }) {
   return (
     <>
       <Head>
-        <title>Project Diary</title>
+        <title>Timothy Leong</title>
         <meta
-          name="Project Diary"
-          content="Post interesting projects that I have done"
+          name="Timothy Leong"
+          content="Personal portfolio of Timothy Leong"
         />
       </Head>
-      <div className="min-h-100v flex flex-col">
+      <div className="relative min-h-screen overflow-hidden bg-slate-950 text-slate-100">
         <Header />
         <Suspense fallback={<Loading />}>
           <Canvas style={{ height: "30vh" }} shadows>
@@ -45,10 +44,9 @@ export default function Layout({ children }) {
             <Plane />
           </Canvas>
         </Suspense>
-        <Navbar />
-        <div className="flex-grow">
-          <main className="">{children}</main>
-        </div>
+        <main className="relative mx-auto flex min-h-[calc(100vh-10rem)] max-w-6xl flex-col px-4 py-6 sm:px-6 lg:px-8">
+          {children}
+        </main>
         <Footer />
       </div>
     </>

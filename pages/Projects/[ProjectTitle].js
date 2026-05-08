@@ -12,11 +12,11 @@ export default function ProjectPage({ frontMatter, mdxSource }) {
   const router = useRouter();
 
   return (
-    <div className="flex justify-center pt-4">
-      <div className="block max-w-[95%]  bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+    <div className="flex justify-center py-8 px-4">
+      <div className="max-w-4xl w-full bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
         <button
           onClick={() => router.back()}
-          className="pt-3 pl-2 hover:underline flex gap-2 text-sm"
+          className="pt-6 pl-6 hover:underline flex gap-2 text-sm text-gray-600 dark:text-gray-400"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -32,17 +32,28 @@ export default function ProjectPage({ frontMatter, mdxSource }) {
               d="M9 15L3 9m0 0l6-6M3 9h12a6 6 0 010 12h-3"
             />
           </svg>
-          <div>Back to Project Page</div>
+          <div>Back to Projects</div>
         </button>
         <div className="p-6">
-          <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+          <h1 className="mb-4 text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
             {frontMatter.title}
-          </h5>
-          <div className="text-gray-400 italic">
-            Tags: {frontMatter.tags.map((tags) => tags + " ")}
+          </h1>
+          {frontMatter.description && (
+            <p className="mb-4 text-lg text-gray-700 dark:text-gray-300">
+              {frontMatter.description}
+            </p>
+          )}
+          <div className="mb-6 flex flex-wrap gap-2">
+            {frontMatter.tags.map((tag) => (
+              <span
+                key={tag}
+                className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200"
+              >
+                {tag}
+              </span>
+            ))}
           </div>
-          <br />
-          <div className="font-normal text-gray-700 dark:text-gray-200">
+          <div className="prose prose-lg max-w-none dark:prose-invert">
             <MDXRemote {...mdxSource} components={components} />
           </div>
         </div>

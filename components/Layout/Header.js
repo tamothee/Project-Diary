@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Button from "./Button";
 import { useTheme } from "next-themes";
-import Image from "next/image";
+import Navbar from "./Navbar";
 
 export default function Header() {
   const { systemTheme, theme, setTheme } = useTheme();
@@ -71,23 +71,17 @@ export default function Header() {
   }
 
   return (
-    <header>
-      <div className="pt-3 text-xl font-bold flex justify-center items-center">
-        <div className="mr-auto invisible"></div>
-          <Image
-            alt=""
-            src={"/bongo_cat_mini.png"}
-            width={100}
-            height={60}
-            unoptimized
-          />
+    <header className="sticky top-0 z-30 border-b border-white/10 bg-slate-950/90 backdrop-blur-xl">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-4 sm:px-6">
+        <div className="text-lg font-semibold tracking-tight text-gray-700 dark:text-white">
+          Timothy Leong
+        </div>
 
-        <div className="inline-flex items-center">Project Diary</div>
-        <div className="ml-auto">
+        <div className="flex items-center gap-4">
+          <Navbar />
           <ToggleButton />
         </div>
       </div>
-      <hr className="border-black dark:border-white" />
     </header>
   );
 }

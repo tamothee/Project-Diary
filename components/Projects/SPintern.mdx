@@ -21,70 +21,54 @@ tags:
 </video>
 
 <div className='pt-4'>
-  <div className='text-xl tracking-tight text-gray-900 dark:text-white'>Description</div>
-    <div>
-      This project was done during my internship in Singapore Polytechnic. I was tasked to
-      do a condition monitoring and vehicle tracking dashboard for a fleet of autonomous vehicle in
-      Singapore Polytechnic.
-    </div>
+  <div className='text-xl tracking-tight text-gray-900 dark:text-white'>Overview</div>
+  <div>
+    During my internship at Singapore Polytechnic, I developed a remote monitoring dashboard for a fleet of autonomous vehicles. The project addressed the limitations of a local Node-RED dashboard, which could only monitor one vehicle at a time, by enabling centralized oversight as the fleet expanded.
+  </div>
 
-    <br/>
+  <div className='text-xl tracking-tight text-gray-900 dark:text-white'>What I Built</div>
+  <div>
+    I created a full-stack web application consisting of a JavaScript server and a React-based frontend. The system integrated vehicle sensors, GPS data, and IP camera feeds to provide real-time and historical monitoring capabilities.
+  </div>
 
-    <div className='text-xl tracking-tight text-gray-900 dark:text-white'>Background</div>
-    <div>
-      Previously, there was a node red dashboard that tracks the vehicle sensors like speed,
-      humidity, and temperature. However, this dashboard was only visible locally on that
-      particular vehicle. This was a problem as there were plans to increase the fleet 
-      size. With the increase in fleet size, there was a need for remote monitoring of multiple 
-      vehicles at once.
-    </div>
+  <div className='text-xl tracking-tight text-gray-900 dark:text-white'>Key Features</div>
+  <div>
+    - Remote monitoring dashboard for multiple autonomous vehicles
+    - Live GPS tracking using Google Maps Platform
+    - Real-time sensor readings (speed, humidity, temperature)
+    - Historical charts for logged sensor data
+    - MySQL database for data storage and logging
+    - MQTT-based data pipeline for efficient sensor data transmission
+    - IP camera video streaming converted to HLS using ffmpeg
+    - Threshold-based sensor color coding for quick visualization (e.g., green for normal, red for out-of-threshold)
+  </div>
 
-    <br/>
+  <div className='text-xl tracking-tight text-gray-900 dark:text-white'>Tech Stack</div>
+  <div>
+    - Backend: JavaScript, ExpressJS, MQTT, MySQL, ffmpeg
+    - Frontend: ReactJS, MUI, Google Maps Platform, react-chartjs-2
+    - Hardware Integration: Node-RED for sensor management, IP camera with onboard router
+  </div>
 
-    <div>
-      Key features that was requested were, 
-      live camera feed, live sensor reading, location tracking, sensor logging (saving to database) 
-      and graphs for the logged sensor data. 
-    </div>
+  <div className='text-xl tracking-tight text-gray-900 dark:text-white'>Challenges</div>
+  <div>
+    - Transitioning from local to remote monitoring required building a scalable data pipeline.
+    - Implementing real-time video streaming involved converting IP camera feeds to HLS format.
+    - Ensuring data integrity through preprocessing, such as duplicate checks, before database storage.
+  </div>
 
-    <br/>
-   <div className='text-xl tracking-tight text-gray-900 dark:text-white'>System Architecture</div>
-   <div className="bg-slate-300 rounded-lg">
-    <img src="/SPintern/SystemArchitechture.png" alt="system architecture"/>
-   </div>
+  <div className='text-xl tracking-tight text-gray-900 dark:text-white'>What I Learned</div>
+  <div>
+    - Designing and implementing MQTT-based data pipelines for IoT applications.
+    - Integrating multimedia streaming (video) into web dashboards.
+    - Using polling mechanisms to maintain server-client synchronization for real-time data.
+    - Applying popular frameworks like React and Express for production-ready applications.
+  </div>
 
-  <div className='text-xl tracking-tight text-gray-900 dark:text-white'>Details</div>
-   <div>
-    
-      I utilized MQTT to transmit sensor data to a Javascript server. At the server, the data underwent preprocessing 
-      such as duplicate data check, before being sent to a MySQL database to be stored. I opted for MySQL as I was 
-      already well-versed in its usage. At the end of my internship, my database was pushed to Huawei cloud.
-
-      <br/>
-
-      For the live camera view, an IP camera was installed on the vehicle. The IP camera was connected to a router 
-      equipped with a sim card onboard the vehicle. Then a javascript server was used to access the IP camera, 
-      convert it to HLS using ffmpeg, and then played on the website.
-
-      <br/>
-
-      To create the user interface for the website, I chose ReactJS and MUI framework. They are the most popular 
-      frameworks which was a quality highly valued by my supervisors. 
-      
-      <br/>
-
-      As for the data visualisations of the sensor data, I utilized react-chartjs-2 to 
-      generate graphical representations of the logged sensor data.
-
-      <br/>
-
-      For real-time sensor data, I set up a polling mechanism where the server was queried every 5 seconds instead 
-      of directly connecting the dashboard to the MQTT server to maintain server-client parity. Node-red was used 
-      to manage both the sensors and the MQTT protocol on the vehicle. It was not mentioned in the video but users 
-      could set colours to their threshold for a better visualisation. For example, users could set a green colour 
-      to data that is within the threshold while having red for data that is out of the threshold.
-   </div>
-
-  <br/>
-  No github repository will be given as I was not given permission to open the code to the public.
+  <div className='text-xl tracking-tight text-gray-900 dark:text-white'>Outcome</div>
+  <div>
+    The dashboard successfully enabled remote monitoring of multiple vehicles, with data logged to a MySQL database hosted on Huawei Cloud. It met all requested features, including live feeds and visualizations, and was valued by supervisors for its use of popular, maintainable technologies.
+  </div>
+  
+  No GitHub repository is available, as I was not permitted to make the code public.
 </div>

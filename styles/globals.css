@@ -2,9 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base{
-  body{
-    @apply max-w-4xl mx-auto px-4 ;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #ffffff;
+    color: #0f172a;
     font-family: "Open Sans", sans-serif;
+    line-height: 1.6;
+  }
+
+  html.dark body {
+    background-color: #020617;
+    color: #f8fafc;
+  }
+
+  ::selection {
+    background: rgba(148, 163, 184, 0.25);
   }
 }
