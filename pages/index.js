@@ -14,7 +14,7 @@ export default function Home() {
               Hi, I&apos;m Timothy. I build full-stack web applications and IoT dashboards.
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-8 text-slate-600 dark:text-slate-300">
-              I'm a Software Engineering student based in Singapore, with experience in React,
+              I&apos;m a Software Engineering student based in Singapore, with experience in React,
               Express, MongoDB, MySQL, MQTT, and hardware-integrated systems.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
@@ -83,7 +83,7 @@ export default function Home() {
           <div className="rounded-3xl border border-slate-200 bg-slate-50 p-8 dark:border-slate-800 dark:bg-slate-900">
             <h2 className="text-2xl font-semibold tracking-tight text-slate-900 dark:text-slate-100">About</h2>
             <p className="mt-4 max-w-3xl text-base leading-8 text-slate-600 dark:text-slate-300">
-              I'm Timothy, an aspiring software developer based in Singapore.
+              Im Timothy, an aspiring software developer based in Singapore.
             </p>
             <p className="mt-4 max-w-3xl text-base leading-8 text-slate-600 dark:text-slate-300">
               I enjoy building full-stack applications and IoT systems, especially projects
@@ -163,9 +163,9 @@ export default function Home() {
         <section className="mt-16 rounded-3xl border border-slate-200 bg-slate-50 p-8 dark:border-slate-800 dark:bg-slate-900">
           <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
             <div>
-              <p className="text-lg font-semibold text-slate-900 dark:text-slate-100">Let's build something useful.</p>
+              <p className="text-lg font-semibold text-slate-900 dark:text-slate-100">Let&apos;s build something useful.</p>
               <p className="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-300">
-                If you have a project idea or need help with a web or IoT system, I'd love to connect.
+                If you have a project idea or need help with a web or IoT system, I&apos;d love to connect.
               </p>
             </div>
             <div className="flex flex-wrap gap-3">
