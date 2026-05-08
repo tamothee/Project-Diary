@@ -11,7 +11,7 @@ export default function Home() {
               Software Engineering student
             </p>
             <h1 className="mt-4 text-4xl font-semibold tracking-tight text-slate-800 dark:text-slate-100 sm:text-5xl">
-              Hi, I'm Timothy. I build full-stack web applications and IoT dashboards.
+              Hi, I&apos;m Timothy. I build full-stack web applications and IoT dashboards.
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-8 text-slate-600 dark:text-slate-300">
               I'm a Software Engineering student based in Singapore, with experience in React,
