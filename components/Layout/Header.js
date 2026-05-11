@@ -16,20 +16,11 @@ export default function Header() {
 
     if (!mounted) return null;
 
-    if (
-      localStorage.theme === "dark" ||
-      (!("theme" in localStorage) &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches)
-    ) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
 
     if (currentTheme === "light") {
       return (
         <Button
-          className="bg-gray-400 text-yellow-400"
+          className="bg-gray-400 text-yellow-300 hover:bg-gray-500"
           onClick={() => setTheme("dark")}
         >
           <svg
@@ -50,7 +41,7 @@ export default function Header() {
       );
     } else {
       return (
-        <Button className="bg-gray-500" onClick={() => setTheme("light")}>
+        <Button className="bg-gray-500 hover:bg-gray-600" onClick={() => setTheme("light")}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -71,12 +62,11 @@ export default function Header() {
   }
 
   return (
-    <header className="sticky top-0 z-30 border-b border-white/10 bg-slate-950/90 backdrop-blur-xl">
+    <header className="sticky top-0 z-30 border-b border-white/10 bg-white dark:bg-slate-950 backdrop-blur-xl">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-4 sm:px-6">
         <div className="text-lg font-semibold tracking-tight text-gray-700 dark:text-white">
           Timothy Leong
         </div>
-
         <div className="flex items-center gap-4">
           <Navbar />
           <ToggleButton />

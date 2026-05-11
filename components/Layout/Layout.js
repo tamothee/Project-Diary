@@ -25,7 +25,7 @@ export default function Layout({ children }) {
           content="Personal portfolio of Timothy Leong"
         />
       </Head>
-      <div className="relative min-h-screen overflow-hidden bg-slate-950 text-slate-100">
+      <div className="relative min-h-screen overflow-hidden bg-white text-slate-900 dark:bg-slate-950 dark:text-slate-100">
         <Header />
         <Suspense fallback={<Loading />}>
           <Canvas style={{ height: "30vh" }} shadows>
