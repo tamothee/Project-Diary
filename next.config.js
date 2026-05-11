@@ -3,7 +3,9 @@
  */
 const nextConfig = {
   swcMinify: true,
-  domains: ['assets.example.com'],
+  images: {
+    domains: ['assets.example.com'],
+  },
 }
 
 module.exports = nextConfig
