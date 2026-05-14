@@ -1,27 +1,9 @@
+import fs from "fs";
+import matter from "gray-matter";
 import Link from "next/link";
+import ProjectCard from "../components/Portfolio/ProjectCard";
 
-export default function Home() {
-  const featuredProjects = [
-    {
-      title: "Singapore Polytechnic Internship",
-      summary:
-        "A practical internship project focused on embedded software and system integration.",
-      tags: ["Embedded C", "IoT", "Hardware"],
-    },
-    {
-      title: "Smart Door Lock with IoT Security",
-      summary:
-        "A security-focused access system with remote control and sensor monitoring.",
-      tags: ["MQTT", "React", "Node.js"],
-    },
-    {
-      title: "Project Diary",
-      summary:
-        "A portfolio-style web app showcasing projects, updates and development progress.",
-      tags: ["Next.js", "Tailwind", "Web"],
-    },
-  ];
-
+export default function Home({ featuredProjects }) {
   return (
     <div className="space-y-16">
       <section className="grid gap-10 lg:grid-cols-[1.5fr_1fr] lg:items-center">
@@ -46,11 +28,7 @@ export default function Home() {
             </Link>
 
             <Link href="https://github.com/tamothee" passHref>
-              <a
-                target="_blank"
-                rel="noreferrer"
-                className="secondary-button"
-              >
+              <a target="_blank" rel="noreferrer" className="secondary-button">
                 GitHub
               </a>
             </Link>
@@ -59,11 +37,7 @@ export default function Home() {
               href="https://sg.linkedin.com/in/timothy-leong-ming-liang-85ba83255"
               passHref
             >
-              <a
-                target="_blank"
-                rel="noreferrer"
-                className="secondary-button"
-              >
+              <a target="_blank" rel="noreferrer" className="secondary-button">
                 LinkedIn
               </a>
             </Link>
@@ -143,35 +117,15 @@ export default function Home() {
 
         <div className="mt-8 grid gap-5 md:grid-cols-3">
           {featuredProjects.map((project) => (
-            <article
-              key={project.title}
-              className="section-card hover:-translate-y-1 hover:shadow-glow"
-            >
-              <h3 className="text-lg font-bold text-brand-light-text dark:text-brand-dark-text">
-                {project.title}
-              </h3>
-
-              <p className="mt-3 text-sm leading-6 muted-text">
-                {project.summary}
-              </p>
-
-              <div className="mt-4 flex flex-wrap gap-2">
-                {project.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="rounded-full bg-brand-light-muted px-3 py-1 text-xs font-semibold text-brand-light-subtle dark:bg-brand-dark-muted dark:text-brand-dark-subtle"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-
-              <Link href="/Projects" passHref>
-                <a className="mt-6 inline-flex text-sm font-semibold text-brand-teal transition hover:text-teal-600 dark:text-brand-cyan dark:hover:text-cyan-300">
-                  View details
-                </a>
-              </Link>
-            </article>
+            <ProjectCard
+              key={project.slug}
+              title={project.frontMatter.title}
+              description={project.frontMatter.description}
+              summary={project.frontMatter.summary}
+              tags={project.frontMatter.tags}
+              href={`/Projects/${project.slug}`}
+              featured
+            />
           ))}
         </div>
       </section>
@@ -195,11 +149,7 @@ export default function Home() {
             </Link>
 
             <Link href="https://github.com/tamothee" passHref>
-              <a
-                target="_blank"
-                rel="noreferrer"
-                className="secondary-button"
-              >
+              <a target="_blank" rel="noreferrer" className="secondary-button">
                 Message on GitHub
               </a>
             </Link>
@@ -208,4 +158,32 @@ export default function Home() {
       </section>
     </div>
   );
+}
+
+export async function getStaticProps() {
+  const files = fs.readdirSync("components/Projects");
+
+  const projects = files.map((filename) => {
+    const markdownWithMeta = fs.readFileSync(
+      `components/Projects/${filename}`,
+      "utf-8"
+    );
+
+    const { data: frontMatter } = matter(markdownWithMeta);
+
+    return {
+      frontMatter,
+      slug: filename.replace(".mdx", ""),
+    };
+  });
+
+  const featuredProjects = projects
+    .filter((project) => project.frontMatter.featured === true)
+    .slice(0, 3);
+
+  return {
+    props: {
+      featuredProjects,
+    },
+  };
 }
