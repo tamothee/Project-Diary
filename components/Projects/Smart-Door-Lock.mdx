@@ -1,85 +1,72 @@
 ---
 title: "Smart Door Lock with IoT Security"
 date: "May 9, 2023"
-description: "An MVP of a smart door lock adhering to Singapore's TR64 standard"
+description: "An MVP of a smart door lock designed with IoT security considerations based on Singapore's TR64 standard."
 thumbnailUrl: "/SmartDoorLock/SmartDoorLockThumbnail.jpg"
 tags: ["JavaScript", "IoT", "Security", "TR64", "Hardware", "ESP32", "MongoDB"]
 featured: true
 ---
 
-<video controls>
+<video controls className="not-prose mb-8 w-full rounded-2xl border border-brand-light-border shadow-card dark:border-brand-dark-border">
   <source src="/SmartDoorLock/SmartDoorLockDemo.mp4" type="video/mp4" />
 </video>
 
-<div className="text-base">
+## Overview
 
-  <div className="text-xl tracking-tight text-gray-900 dark:text-white">
-    Overview
-  </div>
-  <div>
-    This project was completed during a semester at Singapore Polytechnic over two months. It involved developing an MVP of a smart door lock with a focus on IoT security, adhering to Singapore's TR64 standard.
-  </div>
+Smart Door Lock with IoT Security was a semester project completed at Singapore Polytechnic over roughly two months. The goal was to build a working MVP of a smart door lock while placing stronger emphasis on IoT security instead of only focusing on convenience features.
 
-  <div className="text-xl tracking-tight text-gray-900 dark:text-white">
-    Problem / Motivation
-  </div>
-  <div>
-    The goal was to create a smart door lock prioritizing IoT security due to time constraints, which took precedence over other practical features.
-  </div>
+The project was developed as a team, with different members taking ownership of specific parts of the system. My main contributions were in the system architecture, web application, database design, and security-related implementation.
 
-  <div className="text-xl tracking-tight text-gray-900 dark:text-white">
-    What I Built
-  </div>
-  <div>
-    I contributed to the overall system architecture, website development, database management, and security. The project was a collaborative effort with team members handling specific areas.
-  </div>
+## Motivation
 
-  <div className="text-xl tracking-tight text-gray-900 dark:text-white">
-    Key Features
-  </div>
-  <div>
-    - Compliance with Singapore's TR64 standard for IoT security
-    - Hardware integration using ESP32
-    - Web-based interface for management
-    - Database storage with MongoDB
-  </div>
+Smart door locks are useful because they make access control more convenient, but they also introduce security risks when connected to the internet. For this project, we wanted to explore what it means to build an IoT device with security considered from the start.
 
-  <div className="text-xl tracking-tight text-gray-900 dark:text-white">
-    Tech Stack
-  </div>
-  <div>
-    - JavaScript
-    - IoT protocols and security standards (TR64)
-    - Hardware: ESP32
-    - Database: MongoDB
-  </div>
+Since the project had a limited timeline, we focused on building a functional MVP that could demonstrate the core idea while aligning with Singapore’s TR64 IoT security standard.
 
-  <div className="text-xl tracking-tight text-gray-900 dark:text-white">
-    Challenges
-  </div>
-  <div>
-    Balancing security priorities with time constraints limited the inclusion of additional practical features.
-  </div>
+## Implementation
 
-  <div className="text-xl tracking-tight text-gray-900 dark:text-white">
-    What I Learned
-  </div>
-  <div>
-    - Implementing IoT security standards in hardware-software integration
-    - Collaborative development in a team setting with divided responsibilities
-    - Prioritizing security in MVP development
-  </div>
+The system combined hardware, a web interface, and a backend database. The ESP32 was used as the main hardware controller for the lock, while the web application provided a way to manage and interact with the system.
 
-  <div className="text-xl tracking-tight text-gray-900 dark:text-white">
-    Outcome
-  </div>
-  <div>
-    The project resulted in a functional MVP that met the security requirements. It was developed by a team including Ron Tan (TR64 compliance), Joseph Tiamzon (hardware), and myself.
-  </div>
+The backend handled data storage using MongoDB, while the overall system design considered security requirements based on TR64. This included thinking about how the device, web application, and database should work together safely as part of an IoT system.
 
-  <div>
-    For more information, visit the 
-    <a className='underline text-blue-500' target="_blank" href="https://github.com/tamothee/IOTS">GitHub repository</a>.
-  </div>
+## Key Features
 
-</div>
+- Smart door lock MVP using ESP32
+- Web-based interface for system management
+- MongoDB database for storing system data
+- IoT security considerations based on Singapore’s TR64 standard
+- Team-based development with divided responsibilities
+- Hardware and software integration
+
+## My Role
+
+I worked on the broader system design and helped connect the different parts of the project together. This included contributing to the web application, database structure, and security-focused parts of the implementation.
+
+The project was built together with my teammates:
+
+- **Ron Tan** worked on TR64 compliance.
+- **Joseph Tiamzon** worked on the hardware implementation.
+- **I worked on the website, database, system architecture, and security implementation.**
+
+## Tech Stack
+
+- **JavaScript** for the web application
+- **ESP32** for the hardware controller
+- **MongoDB** for database storage
+- **IoT security concepts** based on Singapore’s TR64 standard
+- **Hardware-software integration** for the smart lock system
+
+## Outcome
+
+The final project was a functional MVP that demonstrated a smart door lock system with security as one of its main design priorities. While it was not intended to be a production-ready lock, it showed how hardware, web software, and security requirements can be combined into a working IoT prototype.
+
+This project gave me practical experience in building an IoT system beyond just the software layer, especially in connecting web development, databases, hardware, and security requirements into one system.
+
+<a
+  href="https://github.com/tamothee/IOTS"
+  target="_blank"
+  rel="noreferrer"
+  className="secondary-button not-prose mt-6"
+>
+  View GitHub Repository
+</a>
