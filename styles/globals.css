@@ -9,20 +9,68 @@
   }
 
   body {
+    @apply min-h-screen bg-brand-light-bg text-brand-light-text antialiased dark:bg-brand-dark-bg dark:text-brand-dark-text;
     height: 100%;
-    min-height: 100vh;
-    background-color: #ffffff;
-    color: #0f172a;
     font-family: "Open Sans", sans-serif;
     line-height: 1.6;
   }
 
-  html.dark body {
-    background-color: #020617;
-    color: #f8fafc;
+  ::selection {
+    @apply bg-brand-teal/20 text-brand-light-text dark:bg-brand-cyan/25 dark:text-brand-dark-text;
+  }
+}
+
+@layer components {
+  .page-shell {
+    @apply min-h-screen bg-brand-light-bg bg-brand-light-gradient text-brand-light-text dark:bg-brand-dark-bg dark:bg-brand-dark-gradient dark:text-brand-dark-text;
   }
 
-  ::selection {
-    background: rgba(148, 163, 184, 0.25);
+  .content-shell {
+    @apply mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-card {
+    @apply rounded-2xl border border-brand-light-border bg-brand-light-surface/90 p-6 shadow-card backdrop-blur transition
+    dark:border-brand-dark-border dark:bg-brand-dark-surface/80;
+  }
+
+  .soft-card {
+    @apply rounded-xl border border-brand-light-border bg-brand-light-surface p-4 shadow-sm transition
+    dark:border-brand-dark-border dark:bg-brand-dark-muted/60;
+  }
+
+  .nav-link {
+    @apply rounded-full px-4 py-2 text-sm font-medium text-brand-light-subtle transition
+    hover:bg-brand-light-muted hover:text-brand-teal
+    dark:text-brand-dark-subtle dark:hover:bg-brand-dark-muted dark:hover:text-brand-cyan;
+  }
+
+  .primary-button {
+    @apply inline-flex items-center justify-center rounded-full bg-brand-teal px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition
+    hover:-translate-y-0.5 hover:bg-teal-600 hover:shadow-md
+    focus:outline-none focus:ring-2 focus:ring-brand-teal focus:ring-offset-2 focus:ring-offset-brand-light-bg
+    dark:bg-brand-cyan dark:text-brand-dark-bg dark:hover:bg-cyan-300 dark:focus:ring-brand-cyan dark:focus:ring-offset-brand-dark-bg;
+  }
+
+  .secondary-button {
+    @apply inline-flex items-center justify-center rounded-full border border-brand-light-border px-5 py-2.5 text-sm font-semibold text-brand-light-text transition
+    hover:border-brand-teal hover:text-brand-teal
+    dark:border-brand-dark-border dark:text-brand-dark-text dark:hover:border-brand-cyan dark:hover:text-brand-cyan;
+  }
+
+  .eyebrow {
+    @apply text-sm font-semibold uppercase tracking-[0.25em] text-brand-teal dark:text-brand-cyan;
+  }
+
+  .heading-gradient {
+    @apply bg-gradient-to-r from-brand-teal via-brand-cyan to-brand-amber bg-clip-text text-transparent;
+  }
+
+  .muted-text {
+    @apply text-brand-light-subtle dark:text-brand-dark-subtle;
+  }
+
+  .brand-divider {
+    @apply border-brand-light-border dark:border-brand-dark-border;
   }
 }

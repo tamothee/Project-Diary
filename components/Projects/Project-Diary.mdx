@@ -1,57 +1,65 @@
 ---
 title: Project Diary
-date: 'September 19, 2022'
-description: A website where I log interesting projects that I have done for future reference as well as to showcase them
-thumbnailUrl: '/Project-Diary/ProjectDiaryThumbnail.PNG'
-tags: ['Javascript', 'NextJS', 'ThreeJS', 'ReactJS', 'Tailwind', 'Blender']
+date: "September 19, 2022"
+description: A personal portfolio website where I document and showcase projects I have worked on.
+thumbnailUrl: "/Project-Diary/ProjectDiaryThumbnail.PNG"
+tags: ["JavaScript", "Next.js", "Three.js", "React", "Tailwind CSS", "Blender"]
+featured: true
 ---
 
-<div className="text-base">
-  <div className='text-xl tracking-tight text-gray-900 dark:text-white'>Overview</div>
-  <div>
-    This is a personal portfolio website where I document and showcase notable projects for future reference and professional presentation. It features MDX-based writeups for each project.
-  </div>
+## Overview
 
-  <div className='text-xl tracking-tight text-gray-900 dark:text-white'>Why I Built It</div>
-  <div>
-    Drawing from my internship experience at Singapore Polytechnic, where I gained skills in ReactJS and ExpressJS for IoT dashboards, I aimed to create a deployable and performant site. I chose NextJS for its versatility and refinement, having encountered it during my internship but lacked time to explore it then.
-  </div>
+Project Diary is my personal portfolio website for documenting and showcasing projects I have worked on. I wanted the site to feel more like a project log rather than just a static resume page, so each project has its own writeup with details about the idea, implementation, and technologies used.
 
-  <div className='text-xl tracking-tight text-gray-900 dark:text-white'>What I Learned</div>
-  <div>
-    - Implementing NextJS for server-side rendering and static site generation.
-    - Integrating ThreeJS, React Three Fiber, and React Three Drei for 3D elements and animations.
-    - Using Blender to create custom 3D models, such as a bongo cat character.
-    - Applying Tailwind CSS for styling and responsive design.
-  </div>
+The site is built with Next.js and uses MDX for the project pages, which makes it easy to add new projects by creating new content files.
 
-  <div className='text-xl tracking-tight text-gray-900 dark:text-white'>Tech Stack</div>
-  <div>
-    - NextJS for the framework
-    - ReactJS for components
-    - ThreeJS for 3D graphics
-    - Tailwind for styling
-    - Blender for 3D modeling
-    - MDX for content
-  </div>
+## Motivation
 
-  <div className='text-xl tracking-tight text-gray-900 dark:text-white'>Challenges</div>
-  <div>
-    - Learning NextJS from scratch using tutorials.
-    - Integrating 3D models and animations into the website.
-    - Creating a custom Blender model due to dissatisfaction with available free options, despite the steep learning curve.
-    - Managing time constraints, which limited adding animations to the 3D character.
-  </div>
+I wanted a place where I could properly organise my projects and explain the thinking behind them. A lot of my work involves a mix of web development, IoT, dashboards, and hardware-related systems, so a normal portfolio layout felt a bit too limited.
 
-  <div className='text-xl tracking-tight text-gray-900 dark:text-white'>Outcome</div>
-  <div>
-    The website was successfully built and deployed on Vercel, serving as a platform to showcase projects with a themed design inspired by external sources. It demonstrates my ability to learn and apply new technologies in web development.
-  </div>
+This project also gave me a chance to explore Next.js more seriously. I had seen it during my internship but did not get much time to experiment with it, so I used this website as a way to build something practical while improving the overall design and structure of my portfolio.
 
-  <a className='underline text-blue-500' href="https://github.com/tamothee/Project-Diary">GitHub repository</a>
+## Implementation
 
-</div>
+The website uses a file-based project system. Each project is written as an MDX file with front matter for details like the title, description, date, tags, and whether it should be featured on the homepage.
 
+The project listing page reads these MDX files and automatically generates the project cards. Individual project pages are also generated from the same files, so the content stays consistent across the site.
 
+I also added a 3D element using Three.js and React Three Fiber. The bongo cat model was created in Blender and rendered inside the site to give the portfolio a more personal and unique feel.
 
+## Key Features
 
+- MDX-based project writeups
+- Automatically generated project pages
+- Featured projects section on the homepage
+- Light and dark mode support
+- Reusable layout, button, card, and badge components
+- 3D model rendered with React Three Fiber
+- Responsive design using Tailwind CSS
+- Deployed on Vercel
+
+## Tech Stack
+
+- **Next.js** for the framework and routing
+- **React** for reusable UI components
+- **Tailwind CSS** for styling and responsive design
+- **MDX** for project content
+- **Three.js** for 3D rendering
+- **React Three Fiber** and **Drei** for using Three.js with React
+- **Blender** for creating the 3D model
+- **Vercel** for deployment
+
+## Outcome
+
+Project Diary became the main place where I showcase my technical projects. It is now easier for me to add new work, keep my portfolio updated, and present each project with more context than a simple project card.
+
+The site also helped me build a stronger foundation in Next.js, Tailwind CSS, MDX content workflows, and 3D elements on the web.
+
+<a
+  href="https://github.com/tamothee/Project-Diary"
+  target="_blank"
+  rel="noreferrer"
+  className="secondary-button not-prose mt-6"
+>
+  View GitHub Repository
+</a>

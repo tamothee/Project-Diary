@@ -9,29 +9,31 @@ export default function ProjectCard({
   href,
   featured = false,
 }) {
-  return (
+  const cardContent = (
     <article
-      className={`group flex h-full flex-col rounded-2xl border bg-white p-6 transition hover:-translate-y-1 hover:shadow-md dark:bg-gray-900 ${
-        featured
-          ? "border-gray-300 dark:border-gray-600"
-          : "border-gray-200 dark:border-gray-800"
+      className={`group flex h-full flex-col section-card ${
+        featured ? "ring-1 ring-brand-teal/30 dark:ring-brand-cyan/30" : ""
       }`}
     >
       <div className="flex-1">
-        <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100">
+        {featured && (
+          <p className="mb-3 inline-flex rounded-full bg-brand-teal/10 px-3 py-1 text-xs font-semibold text-brand-teal dark:bg-brand-cyan/10 dark:text-brand-cyan">
+            Featured
+          </p>
+        )}
+
+        <h3 className="text-xl font-bold text-brand-light-text transition group-hover:text-brand-teal dark:text-brand-dark-text dark:group-hover:text-brand-cyan">
           {title}
         </h3>
 
         {summary && (
-          <p className="mt-2 text-sm font-medium text-gray-700 dark:text-gray-300">
+          <p className="mt-2 text-sm font-semibold text-brand-light-subtle dark:text-brand-dark-subtle">
             {summary}
           </p>
         )}
 
         {description && (
-          <p className="mt-3 text-sm leading-6 text-gray-600 dark:text-gray-400">
-            {description}
-          </p>
+          <p className="mt-3 text-sm leading-6 muted-text">{description}</p>
         )}
 
         {Array.isArray(tags) && tags.length > 0 && (
@@ -44,12 +46,23 @@ export default function ProjectCard({
       </div>
 
       {href && (
-        <Link href={href}>
-          <a className="mt-6 inline-flex text-sm font-medium text-gray-900 underline underline-offset-4 transition hover:text-gray-600 dark:text-gray-100 dark:hover:text-gray-300">
-            View project
-          </a>
-        </Link>
+        <div className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-brand-teal transition group-hover:text-teal-600 dark:text-brand-cyan dark:group-hover:text-cyan-300">
+          View project
+          <span className="transition group-hover:translate-x-1">→</span>
+        </div>
       )}
     </article>
+  );
+
+  if (!href) {
+    return cardContent;
+  }
+
+  return (
+    <Link href={href} passHref>
+      <a className="group block h-full rounded-2xl transition hover:-translate-y-1 hover:shadow-glow focus:outline-none focus:ring-2 focus:ring-brand-teal focus:ring-offset-2 focus:ring-offset-brand-light-bg dark:focus:ring-brand-cyan dark:focus:ring-offset-brand-dark-bg">
+        {cardContent}
+      </a>
+    </Link>
   );
 }

@@ -1,74 +1,79 @@
 ---
 title: Singapore Polytechnic Internship
 date: "March 14, 2022"
-description: A website dashboard for monitoring a fleet of autonomous vehicles
+description: A remote monitoring dashboard for a fleet of autonomous vehicles.
 thumbnailUrl: "/SPintern/SPinternThumbnail.JPG"
 tags:
   [
-    "Javascript",
-    "ExpressJS",
-    "ReactJS",
+    "JavaScript",
+    "Express.js",
+    "React",
     "MUI",
-    "Google-Maps-Platform",
+    "Google Maps Platform",
     "ffmpeg",
-    "IP-live-stream",
-    "node-red",
+    "IP Live Stream",
+    "Node-RED",
+    "MQTT",
+    "MySQL",
   ]
+featured: true
 ---
 
-<video controls>
+<video controls className="not-prose mb-8 w-full rounded-2xl border border-brand-light-border shadow-card dark:border-brand-dark-border">
   <source src="/SPintern/IEP_ASEV.mp4" type="video/mp4" />
 </video>
 
-<div className='pt-4'>
-  <div className='text-xl tracking-tight text-gray-900 dark:text-white'>Overview</div>
-  <div>
-    During my internship at Singapore Polytechnic, I developed a remote monitoring dashboard for a fleet of autonomous vehicles. The project addressed the limitations of a local Node-RED dashboard, which could only monitor one vehicle at a time, by enabling centralized oversight as the fleet expanded.
-  </div>
+## Overview
 
-  <div className='text-xl tracking-tight text-gray-900 dark:text-white'>What I Built</div>
-  <div>
-    I created a full-stack web application consisting of a JavaScript server and a React-based frontend. The system integrated vehicle sensors, GPS data, and IP camera feeds to provide real-time and historical monitoring capabilities.
-  </div>
+During my internship at Singapore Polytechnic, I worked on a remote monitoring dashboard for a fleet of autonomous vehicles. The team previously used a local Node-RED dashboard, but that setup was limited because it could only monitor one vehicle at a time.
 
-  <div className='text-xl tracking-tight text-gray-900 dark:text-white'>Key Features</div>
-  <div>
-    - Remote monitoring dashboard for multiple autonomous vehicles
-    - Live GPS tracking using Google Maps Platform
-    - Real-time sensor readings (speed, humidity, temperature)
-    - Historical charts for logged sensor data
-    - MySQL database for data storage and logging
-    - MQTT-based data pipeline for efficient sensor data transmission
-    - IP camera video streaming converted to HLS using ffmpeg
-    - Threshold-based sensor color coding for quick visualization (e.g., green for normal, red for out-of-threshold)
-  </div>
+As the fleet grew, there was a need for a central dashboard that could monitor multiple vehicles remotely. My project focused on building that dashboard and connecting the different data sources into one web-based system.
 
-  <div className='text-xl tracking-tight text-gray-900 dark:text-white'>Tech Stack</div>
-  <div>
-    - Backend: JavaScript, ExpressJS, MQTT, MySQL, ffmpeg
-    - Frontend: ReactJS, MUI, Google Maps Platform, react-chartjs-2
-    - Hardware Integration: Node-RED for sensor management, IP camera with onboard router
-  </div>
+## Motivation
 
-  <div className='text-xl tracking-tight text-gray-900 dark:text-white'>Challenges</div>
-  <div>
-    - Transitioning from local to remote monitoring required building a scalable data pipeline.
-    - Implementing real-time video streaming involved converting IP camera feeds to HLS format.
-    - Ensuring data integrity through preprocessing, such as duplicate checks, before database storage.
-  </div>
+The main goal was to make vehicle monitoring more scalable and accessible. Instead of relying on a local dashboard near the vehicle, supervisors needed a way to view vehicle data, camera feeds, and historical logs from a browser.
 
-  <div className='text-xl tracking-tight text-gray-900 dark:text-white'>What I Learned</div>
-  <div>
-    - Designing and implementing MQTT-based data pipelines for IoT applications.
-    - Integrating multimedia streaming (video) into web dashboards.
-    - Using polling mechanisms to maintain server-client synchronization for real-time data.
-    - Applying popular frameworks like React and Express for production-ready applications.
-  </div>
+This made the project a mix of full-stack development, IoT data handling, database logging, and video streaming.
 
-  <div className='text-xl tracking-tight text-gray-900 dark:text-white'>Outcome</div>
-  <div>
-    The dashboard successfully enabled remote monitoring of multiple vehicles, with data logged to a MySQL database hosted on Huawei Cloud. It met all requested features, including live feeds and visualizations, and was valued by supervisors for its use of popular, maintainable technologies.
-  </div>
-  
-  No GitHub repository is available, as I was not permitted to make the code public.
-</div>
+## Implementation
+
+I built a full-stack web application with a JavaScript backend and a React frontend. The backend received data from the vehicles, processed it, and stored it in a MySQL database hosted on Huawei Cloud.
+
+The frontend displayed live vehicle information in a dashboard format. This included GPS location, speed, temperature, humidity, sensor readings, historical charts, and live camera feeds.
+
+For the video stream, I worked with IP camera feeds and used ffmpeg to convert them into HLS format so they could be viewed through the web dashboard.
+
+## Key Features
+
+- Remote monitoring dashboard for multiple autonomous vehicles
+- Live GPS tracking with Google Maps Platform
+- Real-time sensor readings such as speed, humidity, and temperature
+- Historical charts for logged vehicle data
+- MySQL database for storing sensor logs
+- MQTT-based data pipeline for vehicle sensor data
+- IP camera feed converted to HLS using ffmpeg
+- Customizable sensor status colour coding for quick visual checks
+- React-based frontend using MUI components
+- Telegram and Email notifications
+
+## Tech Stack
+
+- **JavaScript** for the backend and frontend logic
+- **Express.js** for the server
+- **React** for the dashboard interface
+- **MUI** for UI components
+- **Google Maps Platform** for live vehicle tracking
+- **MQTT** for sensor data transmission
+- **MySQL** for data storage
+- **Huawei Cloud** for database hosting
+- **ffmpeg** for converting IP camera streams
+- **Node-RED** for vehicle-side sensor management
+- **react-chartjs-2** for data visualisation
+
+## Outcome
+
+The final dashboard allowed supervisors to monitor multiple autonomous vehicles remotely from a central web interface. It brought together live location tracking, sensor readings, historical charts, and camera feeds into one system.
+
+The project also used widely adopted technologies like React, Express, MQTT, and MySQL, making the system easier to maintain and build upon compared to a purely local dashboard setup.
+
+A GitHub repository is not available because the internship code was not permitted to be made public.
