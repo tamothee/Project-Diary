@@ -11,9 +11,9 @@ export default function ProjectCard({
 }) {
   const cardContent = (
     <article
-      className={`group flex h-full flex-col section-card transition ${
-        href ? "cursor-pointer hover:-translate-y-1 hover:shadow-glow" : ""
-      } ${featured ? "ring-1 ring-brand-teal/30 dark:ring-brand-cyan/30" : ""}`}
+      className={`group flex h-full flex-col section-card ${
+        featured ? "ring-1 ring-brand-teal/30 dark:ring-brand-cyan/30" : ""
+      }`}
     >
       <div className="flex-1">
         {featured && (
@@ -33,9 +33,7 @@ export default function ProjectCard({
         )}
 
         {description && (
-          <p className="mt-3 text-sm leading-6 muted-text">
-            {description}
-          </p>
+          <p className="mt-3 text-sm leading-6 muted-text">{description}</p>
         )}
 
         {Array.isArray(tags) && tags.length > 0 && (
@@ -48,7 +46,7 @@ export default function ProjectCard({
       </div>
 
       {href && (
-        <div className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-brand-teal transition dark:text-brand-cyan">
+        <div className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-brand-teal transition group-hover:text-teal-600 dark:text-brand-cyan dark:group-hover:text-cyan-300">
           View project
           <span className="transition group-hover:translate-x-1">→</span>
         </div>
@@ -62,7 +60,7 @@ export default function ProjectCard({
 
   return (
     <Link href={href} passHref>
-      <a className="block h-full rounded-2xl focus:outline-none focus:ring-2 focus:ring-brand-teal focus:ring-offset-2 focus:ring-offset-brand-light-bg dark:focus:ring-brand-cyan dark:focus:ring-offset-brand-dark-bg">
+      <a className="group block h-full rounded-2xl transition hover:-translate-y-1 hover:shadow-glow focus:outline-none focus:ring-2 focus:ring-brand-teal focus:ring-offset-2 focus:ring-offset-brand-light-bg dark:focus:ring-brand-cyan dark:focus:ring-offset-brand-dark-bg">
         {cardContent}
       </a>
     </Link>
