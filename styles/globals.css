@@ -40,9 +40,10 @@
   }
 
   .nav-link {
-    @apply rounded-full px-4 py-2 text-sm font-medium text-brand-light-subtle transition
+    @apply rounded-full px-3 py-2 text-xs font-medium text-brand-light-subtle transition
     hover:bg-brand-light-muted hover:text-brand-teal
-    dark:text-brand-dark-subtle dark:hover:bg-brand-dark-muted dark:hover:text-brand-cyan;
+    dark:text-brand-dark-subtle dark:hover:bg-brand-dark-muted dark:hover:text-brand-cyan
+    sm:px-4 sm:text-sm;
   }
 
   .primary-button {

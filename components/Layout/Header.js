@@ -22,14 +22,13 @@ export default function Header() {
         type="button"
         aria-label={isLight ? "Switch to dark mode" : "Switch to light mode"}
         onClick={() => setTheme(isLight ? "dark" : "light")}
-        className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-brand-light-border bg-brand-light-surface text-brand-teal shadow-sm transition hover:bg-brand-light-muted hover:text-teal-600 focus:outline-none focus:ring-2 focus:ring-brand-teal focus:ring-offset-2 focus:ring-offset-brand-light-bg dark:border-brand-dark-border dark:bg-brand-dark-surface dark:text-brand-cyan dark:hover:bg-brand-dark-muted dark:hover:text-cyan-300 dark:focus:ring-brand-cyan dark:focus:ring-offset-brand-dark-bg"
+        className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-brand-light-border bg-brand-light-surface text-brand-teal shadow-sm transition hover:bg-brand-light-muted hover:text-teal-600 focus:outline-none focus:ring-2 focus:ring-brand-teal focus:ring-offset-2 focus:ring-offset-brand-light-bg dark:border-brand-dark-border dark:bg-brand-dark-surface dark:text-brand-cyan dark:hover:bg-brand-dark-muted dark:hover:text-cyan-300 dark:focus:ring-brand-cyan dark:focus:ring-offset-brand-dark-bg sm:h-11 sm:w-11"
       >
         {isLight ? (
-          // Sun icon
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
-            className="block h-6 w-6"
+            className="block h-5 w-5 sm:h-6 sm:w-6"
             fill="none"
             stroke="currentColor"
             strokeWidth="2"
@@ -41,11 +40,10 @@ export default function Header() {
             />
           </svg>
         ) : (
-          // Moon icon
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
-            className="block h-6 w-6"
+            className="block h-5 w-5 sm:h-6 sm:w-6"
             fill="none"
             stroke="currentColor"
             strokeWidth="2"
@@ -63,13 +61,13 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-30 border-b border-brand-light-border bg-brand-light-surface/85 backdrop-blur-xl dark:border-brand-dark-border dark:bg-brand-dark-bg/85">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-4 sm:px-6">
-        <div className="shrink-0 text-lg font-bold tracking-tight text-brand-light-text dark:text-brand-dark-text">
+      <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-4 py-3 sm:flex-nowrap sm:px-6 sm:py-4">
+        <div className="min-w-0 shrink-0 text-base font-bold tracking-tight text-brand-light-text dark:text-brand-dark-text sm:text-lg">
           Timothy{" "}
           <span className="text-brand-teal dark:text-brand-cyan">Leong</span>
         </div>
 
-        <div className="flex shrink-0 items-center gap-3">
+        <div className="flex min-w-0 flex-1 items-center justify-end gap-2 sm:flex-none sm:gap-3">
           <Navbar />
           <ToggleButton />
         </div>
